@@ -3,7 +3,7 @@ const { WEEK_TABLE_NAME } = require("../week");
 
 const TOPIC_TABLE_NAME = "topics";
 
-function insertForWeek(weekNumber, topicName) {
+function insertForTopic(weekNumber, topicName) {
   return knex(TOPIC_TABLE_NAME)
     .insert({ week_number: weekNumber, name: topicName })
     .returning("*");
@@ -34,7 +34,7 @@ function deleteTopicById(id) {
 }
 
 module.exports = {
-  insertForWeek,
+  insertForTopic,
   searchTopicWithWeekData,
   updateTopicById,
   deleteTopicById,
